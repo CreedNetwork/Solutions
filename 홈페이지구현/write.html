@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기 - JOKER 🃏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header bg-animate">
+        <div class="container">
+            <nav class="navbar">
+                <a href="dashboard.html" class="logo">
+                    <span>🃏 JOKER</span>
+                </a>
+                <a href="board.html" class="btn btn-dim btn-ripple" style="margin-left: auto; background: rgba(255,255,255,0.05);">
+                    <i class="fas fa-arrow-left"></i> 목록으로
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 30px;">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <div class="card-header">
+                <h3>Create New Post</h3>
+            </div>
+            
+            <form id="postForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 11px; color: var(--text-dim); margin-bottom: 8px;">Category</label>
+                    <select id="postCategory" style="width: 100%; padding: 12px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 4px; color: white;">
+                        <option value="자유">자유게시판</option>
+                        <option value="게임">게임</option>
+                        <option value="Q&A">Q&A</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 11px; color: var(--text-dim); margin-bottom: 8px;">Title</label>
+                    <input type="text" id="postTitle" style="width: 100%; padding: 12px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 4px; color: white;" placeholder="Enter title" required>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; font-size: 11px; color: var(--text-dim); margin-bottom: 8px;">Content</label>
+                    <textarea id="postContent" style="width: 100%; min-height: 300px; padding: 12px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 4px; color: white; resize: vertical;" placeholder="Write your content here..." required></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <a href="board.html" class="btn btn-dim">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Submit Post</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('postForm').onsubmit = (e) => {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            const category = document.getElementById('postCategory').value;
+            savePost(title, content, category);
+        };
+    </script>
+</body>
+</html>

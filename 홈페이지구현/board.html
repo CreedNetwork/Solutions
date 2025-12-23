@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 - JOKER 🃏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header bg-animate">
+        <div class="container">
+            <nav class="navbar">
+                <a href="dashboard.html" class="logo">
+                    <span>🃏 JOKER</span>
+                </a>
+                <button class="mobile-toggle" aria-label="메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="dashboard.html"><i class="fas fa-home"></i> 대시보드</a>
+                    <a href="board.html" class="active"><i class="fas fa-comments"></i> 커뮤니티</a>
+                    <a href="coming-soon.html?from=rank"><i class="fas fa-trophy"></i> 랭킹</a>
+                    <a href="monitoring.html"><i class="fas fa-desktop"></i> PC모니터링</a>
+                    <a href="occupancy.html"><i class="fas fa-chart-column"></i> PC방가동률</a>
+                    <a href="coming-soon.html?from=support"><i class="fas fa-headset"></i> 고객센터</a>
+                </div>
+                <div class="user-controls">
+                    <button onclick="logout()" class="btn-dim" style="background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 20px; width: 40px; height: 40px; border-radius: 50%;">
+                        <i class="fas fa-power-off"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container reveal" style="padding-top: 30px;">
+        <div class="card card-shimmer">
+            <div class="card-header">
+                <div>
+                    <h3 class="text-flow">Community Board ✍️</h3>
+                    <p style="font-size: 12px; color: var(--text-dim);">멤버들과 다양한 이야기를 나누어보세요.</p>
+                </div>
+                <a href="write.html" class="btn btn-primary btn-ripple"><i class="fas fa-pen"></i> 글쓰기</a>
+            </div>
+            
+            <div class="post-list">
+                <!-- script.js에서 렌더링됨 -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
