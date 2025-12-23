@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOKER 커뮤니티 - Welcome! 🃏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(157, 78, 221, 0.15) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-pink), var(--accent-yellow));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+        .hero p {
+            color: var(--text-dim);
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .section-title h2 {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff, var(--text-dim));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 120px;
+        }
+        .plan-card {
+            background: var(--bg-card);
+            padding: 50px 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            position: relative;
+            transition: 0.4s;
+        }
+        .plan-card:hover {
+            transform: scale(1.05);
+            border-color: var(--primary-light);
+            z-index: 10;
+        }
+        .plan-card.popular {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+        .plan-badge {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 900;
+            box-shadow: 0 5px 15px rgba(255, 0, 110, 0.4);
+        }
+        .plan-price {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 30px 0;
+            font-family: 'Outfit';
+        }
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+        .plan-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .plan-features i { color: var(--accent-cyan); font-size: 16px; }
+    </style>
+</head>
+<body>
+    <header class="header bg-animate">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span>🃏 JOKER</span>
+                </a>
+                <button class="mobile-toggle" aria-label="메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="user-controls">
+                    <a href="dashboard.html" class="btn btn-dim btn-ripple" onclick="autoLogin()" style="background: rgba(255,255,255,0.05);">로그인 🔑</a>
+                    <a href="login.html" class="btn btn-primary btn-ripple glow-active">회원가입 🚀</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero reveal">
+            <div class="hero-orbs">
+                <div class="hero-orb purple"></div>
+                <div class="hero-orb pink"></div>
+            </div>
+            <div class="hero-intro">
+            <h1 class="text-flow">상상 그 이상의 즐거움, <br>JOKER COMMUNITY 🃏</h1>
+            <p>익명성 보장은 물론, 다양한 정보와 재미있는 이야기들이 가득합니다. <br>매일 쏟아지는 이벤트와 특별한 멤버십 혜택을 지금 바로 경험해보세요! ✨</p>
+            <div class="hero-btns">
+                <a href="dashboard.html" class="btn btn-primary btn-ripple" onclick="autoLogin()" style="padding: 20px 50px; font-size: 18px;">로그인 🃏</a>
+                <a href="login.html" class="btn btn-outline btn-ripple" style="padding: 20px 50px; font-size: 18px; border-width: 2px;">회원가입 👑</a>
+            </div>
+            </div>
+        </section>
+
+        <!-- Plans -->
+        <section id="plans" class="reveal">
+            <div class="section-title">
+                <h2 class="text-flow">멤버십 등급 가이드 👑</h2>
+                <p>더 특별한 JOKER가 되고 싶다면? 멤버십 혜택을 확인하세요!</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="plan-card card-shimmer">
+                    <h4 style="color: var(--accent-cyan); font-size: 20px;">일반 멤버 🥉</h4>
+                    <div class="plan-price">FREE</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 기본 게시판 활동</li>
+                        <li><i class="fas fa-check"></i> 포인트 자동 적립</li>
+                        <li><i class="fas fa-check"></i> 채팅 참여 권한</li>
+                        <li><i class="fas fa-check"></i> <b>PC방 모니터링</b></li>
+                    </ul>
+                    <a href="login.html" class="btn btn-outline btn-ripple" style="width: 100%;">지금 시작 🃏</a>
+                </div>
+                <div class="plan-card popular card-shimmer glow-active">
+                    <div class="plan-badge bg-animate">MOST POPULAR 🔥</div>
+                    <h4 style="color: var(--primary-light); font-size: 22px;">실버 조커 🥈</h4>
+                    <div class="plan-price">₩9,900 <span>/월</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 기본 게시판 활동</li>
+                        <li><i class="fas fa-check"></i> 포인트 자동 적립</li>
+                        <li><i class="fas fa-check"></i> 채팅 참여 권한</li>
+                        <li><i class="fas fa-check"></i> <b>PC방 모니터링</b></li>
+                        <li><i class="fas fa-check"></i> <b>가동률 집계</b></li>
+                    </ul>
+                    <a href="login.html" class="btn btn-primary btn-ripple" style="width: 100%;">멤버십 신청 🚀</a>
+                </div>
+                <div class="plan-card card-shimmer">
+                    <h4 style="color: var(--accent-yellow); font-size: 20px;">골드 마스터 🥇</h4>
+                    <div class="plan-price">₩29,900 <span>/월</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <b>모든 게시판 무제한 접근</b></li>
+                        <li><i class="fas fa-check"></i> 포인트 자동 적립</li>
+                        <li><i class="fas fa-check"></i> 채팅 참여 권한</li>
+                        <li><i class="fas fa-check"></i> <b>골드 닉네임 효과</b></li>
+                        <li><i class="fas fa-check"></i> <b>PC방 모니터링</b></li>
+                        <li><i class="fas fa-check"></i> <b>PC방 가동률 집계</b></li>
+                        <li><i class="fas fa-check"></i> <b>LoL 실시간 연승랭킹</b></li>
+                    </ul>
+                    <a href="login.html" class="btn btn-outline btn-ripple" style="width: 100%;">마스터 되기 ⭐</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 혁신적 관리 엔진 (Core Features) -->
+        <section id="core-features" class="reveal" style="margin-bottom: 120px;">
+            <div class="section-title">
+                <h2 class="text-flow">PC방 관리의 새로운 기준, JOKER 엔진 ⚙️</h2>
+                <p>운영 효율은 높이고, 유저의 즐거움은 극대화하는 세 가지 핵심 솔루션입니다.</p>
+            </div>
+            <div class="feature-grid">
+                <!-- 엔진 1 -->
+                <div class="feature-item card-shimmer" style="text-align: left; padding: 40px;">
+                    <div style="width: 50px; height: 50px; background: rgba(157, 78, 221, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <i class="fas fa-bolt" style="color: var(--primary-light); font-size: 24px;"></i>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">다이나믹 미션 & 랭킹 🏆</h3>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 25px; line-height: 1.6;">단 3분 만에 구축하는 우리 매장만의 리그! <br>원하는 게임과 시간대에 맞춰 자유롭게 스케줄링하세요.</p>
+                    <ul style="list-style: none; color: var(--text-dim); font-size: 13px; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 누구나 쉬운 드래그 앤 드롭 미션 생성</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 게임별 실시간 연동 및 랭킹 자동 업데이트</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 시간대별 최적화된 자동 스케줄링 엔진</li>
+                    </ul>
+                    <a href="coming-soon.html?from=engine" style="color: var(--accent-yellow); text-decoration: none; font-weight: 700; font-size: 14px;">엔진 상세 보기 <i class="fas fa-chevron-right" style="font-size: 10px; margin-left: 5px;"></i></a>
+                </div>
+                <!-- 엔진 2 -->
+                <div class="feature-item card-shimmer" style="text-align: left; padding: 40px;">
+                    <div style="width: 50px; height: 50px; background: rgba(255, 0, 110, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <i class="fas fa-gift" style="color: var(--accent-pink); font-size: 24px;"></i>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">익스프레스 보상 센터 🎁</h3>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 25px; line-height: 1.6;">유저의 활동을 가치로 바꾸는 마법! <br>포인트부터 실물 상품까지 원클릭으로 관리하세요.</p>
+                    <ul style="list-style: none; color: var(--text-dim); font-size: 13px; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-pink); margin-right: 10px;"></i> 복잡한 승인 절차 없는 즉시 보상 지급</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-pink); margin-right: 10px;"></i> 유저 활동 데이터 기반 자동 타겟팅 보상</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-pink); margin-right: 10px;"></i> 누락 없는 투명한 보상 히스토리 아카이빙</li>
+                    </ul>
+                    <a href="coming-soon.html?from=reward" style="color: var(--accent-yellow); text-decoration: none; font-weight: 700; font-size: 14px;">보상 체계 확인 <i class="fas fa-chevron-right" style="font-size: 10px; margin-left: 5px;"></i></a>
+                </div>
+                <!-- 엔진 3 -->
+                <div class="feature-item card-shimmer" style="text-align: left; padding: 40px;">
+                    <div style="width: 50px; height: 50px; background: rgba(0, 245, 212, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <i class="fas fa-chart-line" style="color: var(--accent-cyan); font-size: 24px;"></i>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">실시간 AI 분석 센터 📊</h3>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 25px; line-height: 1.6;">매출과 유저 패턴을 꿰뚫어 보는 통찰력! <br>데이터 시각화로 한눈에 흐름을 파악합니다.</p>
+                    <ul style="list-style: none; color: var(--text-dim); font-size: 13px; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 1초 단위 업데이트되는 라이브 데이터 보드</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 요일별/시간별 정밀 매출 리포트 생성</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i> 방문객 행동 패턴 기반 마케팅 인사이트</li>
+                    </ul>
+                    <a href="coming-soon.html?from=data" style="color: var(--accent-yellow); text-decoration: none; font-weight: 700; font-size: 14px;">데이터 샘플 보기 <i class="fas fa-chevron-right" style="font-size: 10px; margin-left: 5px;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프리미엄 기능 마스터 리스트 (Detailed Specs) -->
+        <section id="spec-list" class="reveal" style="margin-bottom: 150px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <div class="section-title">
+                <h2 class="text-flow">JOKER 프리미엄 기술 사양 💎</h2>
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--neon-border); background: rgba(25, 25, 45, 0.4);">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); background: rgba(255,255,255,0.02);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-right: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 16px; font-weight: 700;">맞춤형 미션 커스터마이징 ⚡</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 16px; font-weight: 700;">실시간 랭킹 산출 알고리즘 🏆</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-right: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 16px; font-weight: 700;">매장 전용 실시간 TV 송출 시스템 📺</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 16px; font-weight: 700;">글로벌 인기 게임 API 완벽 연동 🎮</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-right: 1px solid var(--glass-border);">
+                        <span style="font-size: 16px; font-weight: 700;">하이라이트 플레이 자동 클라우드 녹화 📹</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px;">
+                        <span style="font-size: 16px; font-weight: 700;">전문 엔지니어 24/7 기술 지원 🎧</span>
+                        <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;"><i class="fas fa-check"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 100px 0; border-top: 1px solid var(--neon-border); background: var(--bg-sidebar); text-align: center;">
+        <div class="container reveal">
+            <span class="logo" style="justify-content: center; font-size: 32px; margin-bottom: 25px;">🃏 JOKER</span>
+            <p style="color: var(--text-dim); font-size: 16px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">당신의 일상에 특별한 재미와 정보를 더하는 <br>대한민국 No.1 프리미엄 커뮤니티 JOKER입니다.</p>
+            <div style="font-size: 14px; color: var(--text-muted);">
+                © 2025 JOKER COMMUNITY. All rights reserved. 💜
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

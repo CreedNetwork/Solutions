@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC 모니터링 - JOKER 🃏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header bg-animate">
+        <div class="container">
+            <nav class="navbar">
+                <a href="dashboard.html" class="logo">
+                    <span>🃏 JOKER</span>
+                </a>
+                <button class="mobile-toggle" aria-label="메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="dashboard.html"><i class="fas fa-home"></i> 대시보드</a>
+                    <a href="board.html"><i class="fas fa-comments"></i> 커뮤니티</a>
+                    <a href="coming-soon.html?from=rank"><i class="fas fa-trophy"></i> 랭킹</a>
+                    <a href="monitoring.html" class="active"><i class="fas fa-desktop"></i> PC모니터링</a>
+                    <a href="occupancy.html"><i class="fas fa-chart-column"></i> PC방가동률</a>
+                    <a href="coming-soon.html?from=support"><i class="fas fa-headset"></i> 고객센터</a>
+                </div>
+                <div class="user-controls">
+                    <button onclick="logout()" class="btn-dim" style="background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 20px; width: 40px; height: 40px; border-radius: 50%;">
+                        <i class="fas fa-power-off"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container reveal" style="padding-top: 30px;">
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="text-flow">실시간 PC 모니터링 🖥️</h3>
+                    <p style="font-size: 12px; color: var(--text-dim);">매장의 실시간 PC 상태를 한눈에 확인하세요.</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-dim"><i class="fas fa-sync"></i> 새로고침</button>
+                    <button class="btn btn-primary"><i class="fas fa-gear"></i> 설정</button>
+                </div>
+            </div>
+
+            <div class="monitor-grid" id="monitorContainer">
+                <!-- PC Row Item 1 -->
+                <div class="monitor-row card-shimmer">
+                    <div class="pc-name-box">
+                        <span>PC-001</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">CPU • Ryzen 7 7800X3D 8-Core</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>9%</span><span>62°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 9%; background: var(--accent-cyan);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">RAM • DDR5 6000MHz 16GB x2</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>10.8GB / 34%</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 34%; background: var(--primary-light);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">GPU • RTX 4070 SUPER 12GB</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>2.6GB / 22%</span><span>67°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 22%; background: var(--accent-pink);"></div></div>
+                        </div>
+                    </div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-expand"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-wifi"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-gear"></i></div>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=200&auto=format&fit=crop" class="pc-screen-thumb" alt="screen">
+                    <div class="process-info">
+                        <span class="process-name">Overwatch.exe</span>
+                        <span>오버워치</span>
+                        <div class="display-spec">[1] 2560x1440 180Hz</div>
+                    </div>
+                </div>
+
+                <!-- PC Row Item 2 -->
+                <div class="monitor-row card-shimmer">
+                    <div class="pc-name-box">
+                        <span>PC-002</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">CPU • Ryzen 7 7800X3D 8-Core</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>28%</span><span>58°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 28%; background: var(--accent-cyan);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">RAM • DDR5 6000MHz 16GB x2</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>9.2GB / 29%</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 29%; background: var(--primary-light);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">GPU • RTX 4070 Ti SUPER 16GB</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>4.1GB / 26%</span><span>62°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 26%; background: var(--accent-pink);"></div></div>
+                        </div>
+                    </div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-expand"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-wifi"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-gear"></i></div>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=200&auto=format&fit=crop" class="pc-screen-thumb" alt="screen">
+                    <div class="process-info">
+                        <span class="process-name">rundll32.exe</span>
+                        <span>마우스 속성</span>
+                        <div class="display-spec">[1] 2560x1440 180Hz</div>
+                    </div>
+                </div>
+
+                <!-- PC Row Item 3 -->
+                <div class="monitor-row card-shimmer">
+                    <div class="pc-name-box">
+                        <span>PC-003</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">CPU • Ryzen 7 7800X3D 8-Core</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>44%</span><span>61°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 44%; background: var(--accent-cyan);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">RAM • DDR5 6000MHz 16GB x2</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>14.6GB / 46%</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 46%; background: var(--primary-light);"></div></div>
+                        </div>
+                    </div>
+                    <div class="spec-info">
+                        <span class="spec-title">GPU • RTX 4080 SUPER 16GB</span>
+                        <div class="stat-bar-item">
+                            <div class="stat-bar-label"><span>6.8GB / 42%</span><span>69°C</span></div>
+                            <div class="mini-progress"><div class="mini-progress-fill" style="width: 42%; background: var(--accent-pink);"></div></div>
+                        </div>
+                    </div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-expand"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-wifi"></i></div>
+                    <div class="icon-wobble" style="color: var(--text-dim); text-align: center;"><i class="fas fa-gear"></i></div>
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=200&auto=format&fit=crop" class="pc-screen-thumb" alt="screen">
+                    <div class="process-info">
+                        <span class="process-name">VALORANT.exe</span>
+                        <span>VALORANT</span>
+                        <div class="display-spec">[1] 2560x1440 240Hz</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 50px 0; border-top: 1px solid var(--neon-border); text-align: center;">
+        <div style="font-size: 12px; color: var(--text-muted);">© 2025 JOKER PC-BANG MANAGEMENT SYSTEM</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
